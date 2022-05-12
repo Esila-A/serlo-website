@@ -1,0 +1,9 @@
+@use "sass:map";
+
+.footer {
+  text-align: center;
+  background-color: map.get($colors, second-color);
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  color: map.get($colors, font-color);
+}

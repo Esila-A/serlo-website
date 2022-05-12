@@ -1,0 +1,77 @@
+@use "sass:map";
+
+.header {
+  padding: 0 5rem;
+  height: 9vh;
+  background-color: map.get($colors, second-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // box-shadow: 0 55px 5px map.get($colors, shadow-color);
+
+  .navigation {
+    display: flex;
+    gap: 10vw;
+
+    &__link {
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: map.get($colors, font-color);
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: .1rem;
+      border-bottom: 3px solid transparent;
+      padding-top: 3px;
+
+      &:hover {
+        border-bottom: 3px solid map.get($colors, accent-color)
+      }
+
+      &:active {
+        color: map.get($colors, accent-color);
+      }
+    }
+  }
+
+  .mobileNavigation {
+    display: none;
+  }
+
+
+  @media (max-width: 792px) {
+
+    padding: 0 2rem;
+
+    .computerNavigation {
+      display: none;
+    }
+
+    .mobileNavigation {
+      display: flex;
+      height: 9vh;
+
+      .icon {
+        color: map.get($colors, font-color);
+        width: 100%;
+        cursor: pointer;
+        z-index: 1;
+        font-size: 2.2rem;
+        align-self: center;
+      }
+
+      .navigation {
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 9vh;
+        width: 100%;
+        background-color: map.get($colors, second-color);
+        padding: 4rem;
+        gap: 6rem;
+        border-top: 3px solid map.get($colors, accent-color);
+      }
+    }
+  }
+}

@@ -1,6 +1,13 @@
+@import "reset.scss";
+
+@import "mixins.scss";
+@import "maps.scss";
+
+@import "app.scss";
 @import "contact.scss";
 @import "footer.scss";
 @import "landing.scss";
 @import "header.scss";
 @import "services.scss";
 @import "gallery.scss";
+@import "form.scss";

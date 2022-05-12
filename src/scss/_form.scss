@@ -1,0 +1,167 @@
+@use "sass:map";
+
+.attempt {
+  padding: 80px 0px;
+}
+
+.form {
+  // margin: 0 auto;
+  width: 65vw;
+  padding: 40px 0;
+  // border: 2px solid map.get($colors, accent-color);
+
+  &_header {
+    @include header;
+    margin-bottom: 2rem;
+    color: map.get($colors,font-second-color);
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .requests {
+      display: flex;
+      flex-direction: column;
+
+      .text {
+        @include text;
+        padding-bottom: 0.2rem;
+        margin-top: 1.5rem;
+        color: map.get($colors, font-second-color);
+      }
+
+      .input-fields {
+        box-sizing: border-box;
+        width: 55vw;
+        background-color: #b5c8d7;
+        border: none;
+        border-radius: 5px;
+        padding: 1rem;
+        color: map.get($colors, font-second-color);
+
+        &::placeholder {
+          color: map.get($colors,font-second-color);
+          font-family: "Source Sans Pro", sans-serif;
+        }
+
+        &--one {
+          height: 2.5rem;
+        }
+
+        &--two {
+          height: 15rem;
+        }
+
+        &:focus {
+          border: 2px solid map.get($colors, main-color);;
+        }
+
+        resize: none;
+      }
+
+      input:-internal-autofill-selected {
+        background-color: map.get($colors, second-color);
+      }
+    }
+  }
+
+  .submit {
+    @include button;
+    margin-top: 2rem;
+    align-self: center;
+  }
+
+  .positive {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.13rem;
+    margin-top: 2rem;
+    line-height: 31px;
+    border: 3px solid #68e452;
+    border-radius: 29px;
+    color: #68e452;
+    box-sizing: border-box;
+    padding: 5px 45px 0 45px;
+    height: 47px;
+    text-align: center;
+  }
+
+  .negative {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.13rem;
+    margin-top: 2rem;
+    line-height: 31px;
+    color: #e45252;
+    border: 3px solid #e45252;
+    border-radius: 29px;
+    color: #e45252;
+    box-sizing: border-box;
+    padding: 5px 45px 0 45px;
+    height: 47px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 792px) {
+  .attempt {
+    padding: 10vh 0 10vh 0;
+  }
+
+  .form {
+    padding: 10px 40px 30px 40px;
+
+    &_header {
+      @include mobileHeader;
+      margin: 1rem;
+    }
+
+    &_content {
+      .requests {
+        .text {
+          font-size: 1rem;
+        }
+
+        .input-fields {
+          width: 70vw;
+
+          &::placeholder {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .submit {
+      // @include mobileButton;
+      margin-top: 1.5rem;
+    }
+
+    .positive {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      box-sizing: border-box;
+      height: 40px;
+      padding: 2px 20px;
+    }
+
+    .negative {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      box-sizing: border-box;
+      height: 66px;
+      line-height: 20px;
+      padding: 10px 20px;
+    }
+  }
+}
+

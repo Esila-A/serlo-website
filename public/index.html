@@ -6,6 +6,13 @@
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Serlo</title>
+
+    <!-- RECAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js">
+      function onSubmit(token) {document.getElementById("form").submit()}
+      window.onSubmit=onSubmit;
+    </script>
+
   </head>
   <body>
     <div id="root"></div>

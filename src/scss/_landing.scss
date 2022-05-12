@@ -1,0 +1,65 @@
+@use "sass:map";
+
+.landing {
+  background-image: url(../try.jpg);
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: 100% 90vh;
+  padding: 0 6rem;
+  color: map.get($colors, font-second-color);
+
+  &_heading {
+    padding-top: 8rem;
+    text-align: center;
+
+    &--hOne {
+      font-size: 2.8rem;
+      padding-bottom: 2rem;
+      line-height: 3rem;
+    }
+
+    &--hTwo {
+      font-size: 2.3rem;
+      padding-bottom: 6rem;
+      span {
+        font-weight: bold;
+      }
+    }
+
+    &--p {
+      font-size: 1.7rem;
+      padding-bottom: 2.2rem;
+    }
+
+    .button {
+      @include button;
+    }
+  }
+
+  &_about {
+    padding-top: 22rem;
+
+    &--heading {
+          text-align: center;
+            font-size: 2.8rem;
+            font-weight: bold;
+            padding-bottom: 2rem;
+    }
+
+    &--paragraph {
+      font-size: 1.3rem;
+      padding-bottom: 5rem;
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .landing {
+  }
+}
+
+@media (max-width: 792px) {
+  .landing {
+  }
+}
